@@ -15,7 +15,7 @@
 
 package org.drools;
 
-import java.util.Map;
+import java.time.LocalDate;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -31,8 +31,8 @@ import org.kie.dmn.api.core.DMNRuntime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LoanTest {
-    static final Logger LOG = LoggerFactory.getLogger(LoanTest.class);
+public class SupportSLATest {
+    static final Logger LOG = LoggerFactory.getLogger(SupportSLATest.class);
 
     @Test
     public void test() {
@@ -44,35 +44,15 @@ public class LoanTest {
         }
         
         DMNRuntime dmnRuntime = KieRuntimeFactory.of(kContainer.getKieBase()).get(DMNRuntime.class);
-        DMNModel model = dmnRuntime.getModel("https://kiegroup.org/dmn/_79B69A7F-5A25-4B53-BD6A-3216EDC246ED", "loan");
+        DMNModel model = dmnRuntime.getModel("https://kiegroup.org/dmn/_77DB15D5-57C6-47C0-8632-DFF88CB85E4A", "support SLA");
         DMNContext context = dmnRuntime.newContext();
-        context.set("Credit score", 680);
-        context.set("Salary", 100_000);
-        context.set("Loan", Map.of("amount", 280_000, "years", 10));
+
+        context.set("Premium subscription?", false);
+        context.set("Today", LocalDate.of(2021, 2, 7));
 
         DMNResult evaluateAll = dmnRuntime.evaluateAll(model, context);
         LOG.info("{}", evaluateAll);
-        Assertions.assertThat(evaluateAll.getDecisionResultByName("Preapproval").getResult()).isEqualTo(true);
-    }
 
-    @Test
-    public void test2() {
-        KieServices kieServices = KieServices.Factory.get();
-        KieContainer kContainer = kieServices.getKieClasspathContainer();
-        Results verifyResults = kContainer.verify();
-        for (Message m : verifyResults.getMessages()) {
-            LOG.info("{}", m);
-        }
-        
-        DMNRuntime dmnRuntime = KieRuntimeFactory.of(kContainer.getKieBase()).get(DMNRuntime.class);
-        DMNModel model = dmnRuntime.getModel("https://kiegroup.org/dmn/_79B69A7F-5A25-4B53-BD6A-3216EDC246ED3", "loan2");
-        DMNContext context = dmnRuntime.newContext();
-        context.set("Credit score", 680);
-        context.set("Salary", 100_000);
-        context.set("Loan", Map.of("amount", 280_000, "years", 10));
-
-        DMNResult evaluateAll = dmnRuntime.evaluateAll(model, context);
-        LOG.info("{}", evaluateAll);
-        Assertions.assertThat(evaluateAll.getDecisionResultByName("Preapproval").getResult()).isEqualTo(true);
+        Assertions.assertThat(evaluateAll.getDecisionResultByName("Determine SLA").getResult()).isEqualTo("SLA Low");
     }
 }
