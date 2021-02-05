@@ -34,6 +34,16 @@
       <groupId>org.kie</groupId>
       <artifactId>kie-dmn-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-flow</artifactId>
+      <version>${drools-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jbpm</groupId>
+      <artifactId>jbpm-bpmn2</artifactId>
+      <version>${drools-version}</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>

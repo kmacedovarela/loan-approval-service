@@ -170,7 +170,7 @@
         <dc:Bounds x="361" y="119" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p4="https://kiegroup.org/dmn/_79B69A7F-5A25-4B53-BD6A-3216EDC246ED" id="dmnshape-drg-_78DB4535-A88F-4247-AA2B-0570E84174EF" dmnElementRef="p4:included1:_78DB4535-A88F-4247-AA2B-0570E84174EF" isCollapsed="false">
+      <dmndi:DMNShape xmlns:p4="https://kiegroup.org/dmn/_79B69A7F-5A25-4B53-BD6A-3216EDC246ED" id="dmnshape-drg-_78DB4535-A88F-4247-AA2B-0570E84174EF" dmnElementRef="included1:_78DB4535-A88F-4247-AA2B-0570E84174EF" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>

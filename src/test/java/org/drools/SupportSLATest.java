@@ -15,15 +15,19 @@
 
 package org.drools;
 
-import java.time.LocalDate;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.assertj.core.api.Assertions;
+import java.time.LocalDate;
+import java.util.Map;
+
 import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.builder.Message;
 import org.kie.api.builder.Results;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieRuntimeFactory;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.process.ProcessInstance;
 import org.kie.dmn.api.core.DMNContext;
 import org.kie.dmn.api.core.DMNModel;
 import org.kie.dmn.api.core.DMNResult;
@@ -42,9 +46,10 @@ public class SupportSLATest {
         for (Message m : verifyResults.getMessages()) {
             LOG.info("{}", m);
         }
-        
+
         DMNRuntime dmnRuntime = KieRuntimeFactory.of(kContainer.getKieBase()).get(DMNRuntime.class);
-        DMNModel model = dmnRuntime.getModel("https://kiegroup.org/dmn/_77DB15D5-57C6-47C0-8632-DFF88CB85E4A", "support SLA");
+        DMNModel model = dmnRuntime.getModel("https://kiegroup.org/dmn/_77DB15D5-57C6-47C0-8632-DFF88CB85E4A",
+                "support SLA");
         DMNContext context = dmnRuntime.newContext();
 
         context.set("Premium subscription?", false);
@@ -53,6 +58,21 @@ public class SupportSLATest {
         DMNResult evaluateAll = dmnRuntime.evaluateAll(model, context);
         LOG.info("{}", evaluateAll);
 
-        Assertions.assertThat(evaluateAll.getDecisionResultByName("Determine SLA").getResult()).isEqualTo("SLA Low");
+        assertThat(evaluateAll.getDecisionResultByName("Determine SLA").getResult()).isEqualTo("SLA Low");
+    }
+
+    @Test
+    public void testProcess() {
+        KieServices kieServices = KieServices.Factory.get();
+        KieContainer kContainer = kieServices.getKieClasspathContainer();
+        Results verifyResults = kContainer.verify();
+        for (Message m : verifyResults.getMessages()) {
+            LOG.info("{}", m);
+        }
+
+        KieSession ksession = kContainer.getKieBase().newKieSession();
+        ProcessInstance processInstance = ksession.startProcess("support", Map.of("premium", true));
+
+        assertThat(processInstance).isNotNull();
     }
 }
