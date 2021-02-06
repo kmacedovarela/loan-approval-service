@@ -1,0 +1,328 @@
+<ScenarioSimulationModel version="1.8">
+  <simulation>
+    <scesimModelDescriptor>
+      <factMappings>
+        <FactMapping>
+          <expressionElements/>
+          <expressionIdentifier>
+            <name>Index</name>
+            <type>OTHER</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>#</name>
+            <className>java.lang.Integer</className>
+          </factIdentifier>
+          <className>java.lang.Integer</className>
+          <factAlias>#</factAlias>
+          <columnWidth>70</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+        <FactMapping>
+          <expressionElements/>
+          <expressionIdentifier>
+            <name>Description</name>
+            <type>OTHER</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>Scenario description</name>
+            <className>java.lang.String</className>
+          </factIdentifier>
+          <className>java.lang.String</className>
+          <factAlias>Scenario description</factAlias>
+          <columnWidth>300</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+        <FactMapping>
+          <expressionElements>
+            <ExpressionElement>
+              <step>Premium subscription?</step>
+            </ExpressionElement>
+          </expressionElements>
+          <expressionIdentifier>
+            <name>1|1</name>
+            <type>GIVEN</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>Premium subscription?</name>
+            <className>Premium subscription?</className>
+          </factIdentifier>
+          <className>boolean</className>
+          <factAlias>Premium subscription?</factAlias>
+          <expressionAlias>value</expressionAlias>
+          <genericTypes/>
+          <columnWidth>568.6666666666666</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+        <FactMapping>
+          <expressionElements>
+            <ExpressionElement>
+              <step>Today</step>
+            </ExpressionElement>
+          </expressionElements>
+          <expressionIdentifier>
+            <name>1612603689750</name>
+            <type>GIVEN</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>Today</name>
+            <className>.Today</className>
+          </factIdentifier>
+          <className>date</className>
+          <factAlias>Today</factAlias>
+          <expressionAlias>value</expressionAlias>
+          <columnWidth>568.6666666666666</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+        <FactMapping>
+          <expressionElements>
+            <ExpressionElement>
+              <step>Determine SLA</step>
+            </ExpressionElement>
+          </expressionElements>
+          <expressionIdentifier>
+            <name>1|2</name>
+            <type>EXPECT</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>Determine SLA</name>
+            <className>Determine SLA</className>
+          </factIdentifier>
+          <className>string</className>
+          <factAlias>Determine SLA</factAlias>
+          <expressionAlias>value</expressionAlias>
+          <genericTypes/>
+          <columnWidth>568.6666666666666</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+      </factMappings>
+    </scesimModelDescriptor>
+    <scesimData>
+      <Scenario>
+        <factMappingValues>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Scenario description</name>
+              <className>java.lang.String</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Description</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">standard weekday</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Premium subscription?</name>
+              <className>Premium subscription?</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|1</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">false</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Determine SLA</name>
+              <className>Determine SLA</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|2</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">"SLA Medium"</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>#</name>
+              <className>java.lang.Integer</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Index</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">1</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Today</name>
+              <className>.Today</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1612603689750</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">date("2021-02-05")</rawValue>
+          </FactMappingValue>
+        </factMappingValues>
+      </Scenario>
+      <Scenario>
+        <factMappingValues>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Scenario description</name>
+              <className>java.lang.String</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Description</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">standard weekend</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Premium subscription?</name>
+              <className>Premium subscription?</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|1</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">false</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Determine SLA</name>
+              <className>Determine SLA</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|2</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">"SLA Low"</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>#</name>
+              <className>java.lang.Integer</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Index</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">2</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Today</name>
+              <className>.Today</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1612603689750</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">date("2021-02-06")</rawValue>
+          </FactMappingValue>
+        </factMappingValues>
+      </Scenario>
+      <Scenario>
+        <factMappingValues>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Scenario description</name>
+              <className>java.lang.String</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Description</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">Premium weekend</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Premium subscription?</name>
+              <className>Premium subscription?</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|1</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">true</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Determine SLA</name>
+              <className>Determine SLA</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|2</name>
+              <type>EXPECT</type>
+            </expressionIdentifier>
+            <rawValue class="string">"SLA High"</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>#</name>
+              <className>java.lang.Integer</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>Index</name>
+              <type>OTHER</type>
+            </expressionIdentifier>
+            <rawValue class="string">3</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Today</name>
+              <className>.Today</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1612603689750</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+            <rawValue class="string">date("2021-02-07")</rawValue>
+          </FactMappingValue>
+        </factMappingValues>
+      </Scenario>
+    </scesimData>
+  </simulation>
+  <background>
+    <scesimModelDescriptor>
+      <factMappings>
+        <FactMapping>
+          <expressionElements/>
+          <expressionIdentifier>
+            <name>1|1</name>
+            <type>GIVEN</type>
+          </expressionIdentifier>
+          <factIdentifier>
+            <name>Empty</name>
+            <className>java.lang.Void</className>
+          </factIdentifier>
+          <className>java.lang.Void</className>
+          <factAlias>INSTANCE 1</factAlias>
+          <expressionAlias>PROPERTY 1</expressionAlias>
+          <columnWidth>114</columnWidth>
+          <factMappingValueType>NOT_EXPRESSION</factMappingValueType>
+        </FactMapping>
+      </factMappings>
+    </scesimModelDescriptor>
+    <scesimData>
+      <BackgroundData>
+        <factMappingValues>
+          <FactMappingValue>
+            <factIdentifier>
+              <name>Empty</name>
+              <className>java.lang.Void</className>
+            </factIdentifier>
+            <expressionIdentifier>
+              <name>1|1</name>
+              <type>GIVEN</type>
+            </expressionIdentifier>
+          </FactMappingValue>
+        </factMappingValues>
+      </BackgroundData>
+    </scesimData>
+  </background>
+  <settings>
+    <dmnFilePath>src/main/resources/support SLA.dmn</dmnFilePath>
+    <type>DMN</type>
+    <dmnNamespace>https://kiegroup.org/dmn/_77DB15D5-57C6-47C0-8632-DFF88CB85E4A</dmnNamespace>
+    <dmnName>support SLA</dmnName>
+    <skipFromBuild>false</skipFromBuild>
+    <stateless>false</stateless>
+  </settings>
+  <imports>
+    <imports/>
+  </imports>
+</ScenarioSimulationModel>
